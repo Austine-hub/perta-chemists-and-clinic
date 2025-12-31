@@ -1,0 +1,562 @@
+/*src/components/header/Header.module.css*/
+
+/* Header Container */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Logo Section */
+.logoSection {
+  flex-shrink: 0;
+}
+
+.logoLink {
+  text-decoration: none;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.logoLink:hover {
+  opacity: 0.85;
+}
+
+.logoLink:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.logoText {
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #1a1a1a;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.logoSubtext {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #4a4a4a;
+  margin-top: 0.125rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.logoTagline {
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  color: #6b7280;
+  margin-top: 0.125rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+}
+
+/* Search Section */
+.searchSection {
+  flex: 1;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.searchForm {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.searchWrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  color: #6b7280;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: #1a1a1a;
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
+
+.searchInput:hover {
+  border-color: #9ca3af;
+  background-color: #ffffff;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #0066cc;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.searchButton {
+  padding: 0.75rem 2rem;
+  background-color: #0066cc;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.searchButton:hover {
+  background-color: #0052a3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
+}
+
+.searchButton:active {
+  transform: translateY(0);
+}
+
+.searchButton:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3);
+}
+
+/* Actions Section */
+.actionsSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem;
+  background: none;
+  border: none;
+  color: #4b5563;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.actionButton:hover {
+  background-color: #f3f4f6;
+  color: #1a1a1a;
+}
+
+.actionButton:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.actionButton svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.accountInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.accountLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.accountSubLabel {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Cart Button */
+.cartButton {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 1rem;
+  background: none;
+  border: none;
+  color: #4b5563;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cartButton:hover {
+  background-color: #f3f4f6;
+  color: #1a1a1a;
+}
+
+.cartButton:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.cartIconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartIconWrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.75rem;
+  background: #ffc220;
+  color: #000;
+  border-radius: 999px;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0 0.25rem;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.cartPriceWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.cartPrice {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Menu Button */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #4b5563;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.menuButton:hover {
+  background-color: #f3f4f6;
+  color: #1a1a1a;
+}
+
+.menuButton:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.menuButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Accessibility */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 1024px) {
+  .container {
+    padding: 1rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .searchSection {
+    min-width: 250px;
+    max-width: 500px;
+  }
+
+  .accountInfo {
+    display: none;
+  }
+
+  .searchButton {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Mobile Breakpoint - FIXED LAYOUT */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.875rem 1rem;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  /* Row 1: Logo (left) | Cart + Menu (right) */
+  .logoSection {
+    order: 1;
+    flex: 0 0 auto;
+    margin-right: auto;
+  }
+
+  .searchSection {
+    order: 4;
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    margin-top: 0.75rem;
+  }
+
+  .actionsSection {
+    order: 2;
+    margin-left: auto;
+    gap: 0.25rem;
+  }
+
+  /* Hide non-essential action buttons */
+  .actionButton {
+    display: none;
+  }
+
+  /* Cart stays visible, adjusted padding */
+  .cartButton {
+    display: flex;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  /* Menu button visible on mobile */
+  .menuButton {
+    display: flex;
+    order: 3;
+    padding: 0.5rem;
+  }
+
+  /* Search adjustments */
+  .searchForm {
+    gap: 0.5rem;
+  }
+
+  .searchButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  /* Logo size adjustments */
+  .logoText {
+    font-size: 1.5rem;
+  }
+
+  .logoSubtext {
+    font-size: 0.625rem;
+    letter-spacing: 0.12em;
+  }
+
+  .logoTagline {
+    font-size: 0.5rem;
+  }
+
+  /* Cart badge adjustments */
+  .cartBadge {
+    top: -0.4rem;
+    right: -0.6rem;
+    min-width: 1.1rem;
+    height: 1.1rem;
+    font-size: 0.65rem;
+  }
+
+  .cartPrice {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Small Mobile Breakpoint */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem 0.875rem;
+  }
+
+  .logoText {
+    font-size: 1.25rem;
+  }
+
+  .logoSubtext {
+    font-size: 0.5625rem;
+  }
+
+  .logoTagline {
+    display: none;
+  }
+
+  .searchInput {
+    font-size: 0.875rem;
+    padding: 0.625rem 0.875rem 0.625rem 2.5rem;
+  }
+
+  .searchIcon {
+    left: 0.875rem;
+    width: 18px;
+    height: 18px;
+  }
+
+  .searchButton {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .cartPrice {
+    font-size: 0.75rem;
+  }
+
+  .cartButton {
+    padding: 0.5rem 0.375rem;
+    gap: 0.375rem;
+  }
+
+  .menuButton {
+    padding: 0.375rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .container {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .logoText {
+    font-size: 1.125rem;
+  }
+
+  .logoSubtext {
+    font-size: 0.5rem;
+  }
+
+  .searchButton {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.75rem;
+  }
+
+  .cartPrice {
+    display: none;
+  }
+
+  .cartBadge {
+    top: -0.35rem;
+    right: -0.5rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .header {
+    box-shadow: none;
+    border-bottom: 1px solid #000;
+  }
+
+  .searchSection,
+  .actionsSection,
+  .menuButton {
+    display: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .header {
+    border-bottom: 2px solid #000;
+  }
+
+  .searchInput,
+  .searchButton {
+    border: 2px solid #000;
+  }
+
+  .actionButton:focus-visible,
+  .cartButton:focus-visible,
+  .menuButton:focus-visible {
+    outline: 3px solid #000;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  :global(*) {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .searchButton:hover,
+  .actionButton:hover,
+  .cartButton:hover {
+    transform: none;
+  }
+}

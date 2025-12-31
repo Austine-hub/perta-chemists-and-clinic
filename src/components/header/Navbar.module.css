@@ -1,0 +1,338 @@
+/*src/components/header/Navbar.module.css*/
+
+:global(:root) {
+  --navbar-bg: #0071dc;
+  --navbar-hover: #004f9a;
+  --navbar-text: #fff;
+  --dropdown-bg: #fff;
+  --dropdown-text: #2e2f32;
+  --border-color: #e5e5e5;
+   --btn-dark: #3c3c3c;
+  --btn-green: #7ab344;
+  --btn-green-hover: #6a9e3a;
+}
+
+.navbar {
+  position: sticky;
+  width: 100%;
+  background: var(--navbar-bg);
+  color: var(--navbar-text);
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.00125 rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.mobileHeader {
+  display: none;
+}
+
+.desktopNav {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.homeSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--navbar-text);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.homeSection:hover,
+.homeSection:focus-visible {
+  border-bottom-color: var(--navbar-hover);
+  background: rgba(0, 79, 154, 0.1);
+  outline: none;
+}
+
+.homeText {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.navBtn,
+.navLink {
+  background: none;
+  border: none;
+  color: var(--navbar-text);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.navBtn:hover,
+.navLink:hover,
+.navBtn:focus-visible,
+.navLink:focus-visible {
+  border-bottom-color: var(--navbar-hover);
+  background: rgba(0, 79, 154, 0.1);
+  outline: none;
+}
+
+.navBtn.active {
+  border-bottom-color: var(--navbar-hover);
+}
+
+.dropdownWrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  background: var(--dropdown-bg);
+  min-width: 240px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 1rem;
+  animation: slideDown 0.2s ease;
+  z-index: 10;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.columnList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.columnList li {
+  padding: 0.5rem 0;
+}
+
+.columnList a {
+  font-size: 0.875rem;
+  color: var(--dropdown-text);
+  text-decoration: none;
+  display: block;
+  transition: color 0.15s;
+}
+
+.columnList a:hover,
+.columnList a:focus-visible {
+  color: var(--navbar-bg);
+  text-decoration: underline;
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-left: 1rem;
+}
+
+.btnDark,
+.btnGreen {
+  padding: 0.625rem 1.25rem;
+  border-radius: 24px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btnDark {
+  background: var(--btn-dark);
+  color: var(--navbar-text);
+}
+
+.btnDark:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+.btnGreen {
+  background: var(--btn-green);
+  color: var(--navbar-text);
+}
+
+.btnGreen:hover {
+  background: var(--btn-green-hover);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1023px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 80vw;
+    max-width: 350px;
+    left: 0;
+    z-index: 1000;
+    background: var(--dropdown-bg);
+    color: var(--dropdown-text);
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 0;
+    bottom:0;
+  }
+
+  .navbar.open {
+    transform: translateX(0);
+  }
+
+  .mobileHeader {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 1rem;
+    background: var(--navbar-bg);
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobileTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--navbar-text);
+    margin: 0;
+  }
+
+  .closeBtn {
+    background: none;
+    border: none;
+    color: var(--navbar-text);
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .desktopNav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 0;
+    gap: 0;
+    justify-content: flex-start;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .homeSection {
+    color: var(--dropdown-text);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    justify-content: flex-start;
+  }
+
+  .homeSection:hover {
+    background: #f7f7f7;
+    border-bottom-color: var(--border-color);
+  }
+
+  .homeText {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .navLink,
+  .navBtn {
+    color: var(--dropdown-text);
+    width: 100%;
+    justify-content: flex-start;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .navBtn:hover,
+  .navLink:hover {
+    background: #f7f7f7;
+    border-bottom-color: var(--border-color);
+  }
+
+  .dropdownWrapper {
+    width: 100%;
+  }
+
+  .dropdown {
+    position: static;
+    display: block;
+    width: 100%;
+    box-shadow: none;
+    padding: 1rem 1.5rem;
+    border-radius: 0;
+    animation: none;
+    background: #f9f9f9;
+  }
+
+  .columnList {
+    margin-top: 0.5rem;
+  }
+
+  .columnList li {
+    padding: 0.4rem 0;
+  }
+
+  .actions {
+    flex-direction: column;
+    margin: 1rem 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .btnDark,
+  .btnGreen {
+    text-align: center;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .navBtn,
+  .navLink {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(*) {
+    animation: none !important;
+    transition: none !important;
+  }
+}
