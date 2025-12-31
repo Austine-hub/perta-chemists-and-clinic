@@ -53,13 +53,13 @@ export default function ClientProviders({ children }: ClientProvidersProps) {
             toastOptions={{
               duration: 3000,
               style: {
-                background: '#363636',
+                background: '#1de00bff',
                 color: '#fff',
               },
               success: {
                 duration: 3000,
                 iconTheme: {
-                  primary: '#10b981',
+                  primary: '#1de00bff',
                   secondary: '#fff',
                 },
               },

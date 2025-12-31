@@ -355,12 +355,12 @@
 
 .toastContent strong {
   font-weight: 600;
-  color: #0a2540;
+  color: #dde0e2;
 }
 
 .toastContent span {
   font-size: 0.85rem;
-  color: #5e6e7c;
+  color: #d8dadb;
 }
 
 /* ========================================================================== */

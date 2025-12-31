@@ -50,9 +50,10 @@ const DealsOfTheDay = memo(function DealsOfTheDay() {
       toast.success(`${deal.name} added to cart`, {
         duration: 3000,
         icon: <ShoppingCart size={34} />,
+        position:"top-center",
         style: {
-          background: "#fff",
-          color: "#08a329ff",
+          background: "#07af0fff",
+          color: "#FFFFFF",
           fontWeight: "500",
         },
       });

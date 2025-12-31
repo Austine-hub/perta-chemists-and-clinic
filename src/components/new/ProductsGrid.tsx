@@ -162,7 +162,11 @@ export default function DealsGrid() {
         {
           icon: "✓",
           duration: 3000,
-          position: "top-right",
+          position: "top-center",
+          style: {
+            background: "green",
+            color: "white",
+          },
         }
       );
     },
